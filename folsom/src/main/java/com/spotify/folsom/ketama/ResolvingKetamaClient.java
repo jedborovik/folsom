@@ -208,7 +208,7 @@ public class ResolvingKetamaClient extends AbstractRawMemcacheClient {
     RawMemcacheClient connect(HostAndPort input);
   }
 
-  private void setPendingClient(final ImmutableList.Builder removedClients) {
+  private void setPendingClient(final ImmutableList.Builder<RawMemcacheClient> removedClients) {
     shutdownQueue.addAll(removedClients.build());
 
     final List<AddressAndClient> addressAndClients =
